@@ -1,7 +1,7 @@
 # codepath-android-todo
 ###CodePath Prework - Android ToDo App: *Things*
 
-Time spent: 7-8 hours spent in total
+Time spent: 6-7 hours spent in total
 
 ## User Stories
 
@@ -28,6 +28,6 @@ The following **additional** features are implemented:
 
 * Spent some time understanding and implementing the Custom Adapter and ORM tool.
 
-<img src='http://i.imgur.com/9apA6vA.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+[Video Walkthrough](http://i.imgur.com/9apA6vA.gifv)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
