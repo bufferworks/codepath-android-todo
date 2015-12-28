@@ -36,8 +36,10 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         final TextView tvNotes = (TextView) convertView.findViewById(R.id.tvNotes);
         tvTitle.setText(item.getTitle());
         tvNotes.setText(item.getNotes());
+
+        final CheckBox cbStatus = (CheckBox) convertView.findViewById(R.id.cbStatus);
+        cbStatus.setChecked(false);
         if (Status.DONE.equals(item.getStatus())) {
-            final CheckBox cbStatus = (CheckBox) convertView.findViewById(R.id.cbStatus);
             cbStatus.setChecked(true);
         }
 
