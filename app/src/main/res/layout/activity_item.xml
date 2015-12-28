@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/new_item_title"
+        android:id="@+id/tvTitle"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:paddingTop="10dp" />
+
+    <EditText
+        android:layout_width="219dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etTitle"
+        android:layout_alignTop="@+id/tvTitle"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/label_item_notes"
+        android:id="@+id/tvNotes"
+        android:layout_below="@+id/etTitle"
+        android:layout_alignLeft="@+id/tvTitle"
+        android:layout_alignStart="@+id/tvTitle"
+        android:layout_marginTop="14dp"
+        android:paddingTop="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etNotes"
+        android:layout_alignTop="@+id/tvNotes"
+        android:layout_alignLeft="@+id/etTitle"
+        android:layout_alignStart="@+id/etTitle"
+        android:layout_toLeftOf="@+id/etTitle"
+        android:layout_alignRight="@+id/etTitle"
+        android:layout_alignEnd="@+id/etTitle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/label_item_priority"
+        android:id="@+id/tvPriority"
+        android:layout_below="@+id/etNotes"
+        android:layout_alignLeft="@+id/tvNotes"
+        android:layout_alignStart="@+id/tvNotes"
+        android:layout_marginTop="14dp"
+        android:layout_alignRight="@+id/tvNotes"
+        android:layout_alignEnd="@+id/tvNotes"
+        android:paddingTop="10dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerPriority"
+        android:layout_alignTop="@+id/tvPriority"
+        android:layout_alignLeft="@+id/etNotes"
+        android:layout_alignStart="@+id/etNotes"
+        android:spinnerMode="dropdown"
+        android:layout_alignRight="@+id/etNotes"
+        android:layout_alignEnd="@+id/etNotes"
+        android:layout_marginTop="14dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/label_item_status"
+        android:id="@+id/tvStatus"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/spinnerPriority"
+        android:layout_alignLeft="@+id/tvPriority"
+        android:layout_alignStart="@+id/tvPriority"
+        android:layout_marginTop="24dp" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerStatus"
+        android:layout_alignTop="@+id/tvStatus"
+        android:layout_alignLeft="@+id/spinnerPriority"
+        android:layout_alignStart="@+id/spinnerPriority"
+        android:spinnerMode="dropdown"
+        android:paddingTop="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_save"
+        android:id="@+id/btnSave"
+        android:onClick="onSave"
+        android:layout_below="@+id/spinnerStatus"
+        android:layout_alignLeft="@+id/tvStatus"
+        android:layout_alignStart="@+id/tvStatus"
+        android:layout_marginTop="37dp" />
+
+</RelativeLayout>
