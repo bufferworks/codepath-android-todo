@@ -1,7 +1,7 @@
 # codepath-android-todo
 ###CodePath Prework - Android ToDo App: *Things*
 
-Time spent: 6-7 hours spent in total
+Time spent: ~8 hours spent in total
 
 ## User Stories
 
