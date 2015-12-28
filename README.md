@@ -1,7 +1,7 @@
 # codepath-android-todo
 ###CodePath Prework - Android ToDo App: *Things*
 
-Time spent: 6-8 hours spent in total
+Time spent: 7-8 hours spent in total
 
 ## User Stories
 
@@ -24,6 +24,9 @@ The following **additional** features are implemented:
 * [X] List the todo items in the order they were created.
 * [X] The Toolbar menu has a *Show Done* option to show *Thing*'s marked as **DONE**. Re-clicking the same menu will hide *Thing*'s marked as **DONE** and only show items with status **TODO**.
 
+## Notes
+
+* Spent some time understanding and implementing the Custom Adapter and ORM tool.
 
 <img src='http://i.imgur.com/9apA6vA.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 

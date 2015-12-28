@@ -113,6 +113,7 @@ public class SimpleTodoActivity extends AppCompatActivity {
                 editedItem.setPriority(Priority.valueOf(data.getStringExtra("itemPriority")));
                 editedItem.setStatus(Status.valueOf(data.getStringExtra("itemStatus")));
                 editedItem.save();
+                readItems();
                 itemsAdapter.notifyDataSetChanged();
             }
         } else if (resultCode == RESULT_OK && requestCode == NEW_ITEM_REQUEST_CODE) {
@@ -133,7 +134,6 @@ public class SimpleTodoActivity extends AppCompatActivity {
             items.addAll(showDoneItems ?
                     Lists.newArrayList(Select.from(Item.class).orderBy("created asc").list()) :
                     Lists.newArrayList(Select.from(Item.class).where(Condition.prop("status").eq(Status.TODO.name())).orderBy("created asc").list()));
-            System.out.println("Items# " + items.size());
         } catch (Exception e) {
             items = new ArrayList<>();
         }
