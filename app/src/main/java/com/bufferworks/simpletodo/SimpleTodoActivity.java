@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.bufferworks.simpletodo.adapter.ItemAdapter;
 import com.bufferworks.simpletodo.entity.Item;
@@ -31,6 +33,7 @@ public class SimpleTodoActivity extends AppCompatActivity {
     private ItemAdapter itemsAdapter;
     private ListView lvItems;
     private boolean showDoneItems = false;
+    private RelativeLayout relativeLayout = null;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -42,6 +45,8 @@ public class SimpleTodoActivity extends AppCompatActivity {
         readItems();
         itemsAdapter = new ItemAdapter(this, items);
         lvItems.setAdapter(itemsAdapter);
+
+        relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
 
         setupDeleteItemListener();
         setupEditItemListener();
@@ -80,6 +85,7 @@ public class SimpleTodoActivity extends AppCompatActivity {
                 item.delete();
                 items.remove(position);
                 itemsAdapter.notifyDataSetChanged();
+                showToast(R.string.thingDeleted);
                 return true;
             }
         });
@@ -115,6 +121,7 @@ public class SimpleTodoActivity extends AppCompatActivity {
                 editedItem.save();
                 readItems();
                 itemsAdapter.notifyDataSetChanged();
+                showToast(R.string.thingEdited);
             }
         } else if (resultCode == RESULT_OK && requestCode == NEW_ITEM_REQUEST_CODE) {
             final String itemTitle = data.getExtras().getString("itemTitle");
@@ -125,6 +132,7 @@ public class SimpleTodoActivity extends AppCompatActivity {
             SugarRecord.saveInTx(Arrays.asList(item));
             items.add(item);
             itemsAdapter.notifyDataSetChanged();
+            showToast(R.string.thingAdded);
         }
     }
 
@@ -137,5 +145,10 @@ public class SimpleTodoActivity extends AppCompatActivity {
         } catch (Exception e) {
             items = new ArrayList<>();
         }
+    }
+
+    private void showToast(final int msgId) {
+        final Toast actionToast = Toast.makeText(getApplicationContext(), msgId, Toast.LENGTH_LONG);
+        actionToast.show();
     }
 }

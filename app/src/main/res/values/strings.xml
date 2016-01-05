@@ -13,6 +13,9 @@
     <string name="label_item_status">Status</string>
     <string name="hideDoneItems">Hide Done</string>
     <string name="showDoneItems">Show Done</string>
+    <string name="thingAdded">New thing has been added</string>
+    <string name="thingEdited">That thing has been updated</string>
+    <string name="thingDeleted">That thing has been deleted</string>
     <string-array name="priority_array">
         <item>Low</item>
         <item>Medium</item>
